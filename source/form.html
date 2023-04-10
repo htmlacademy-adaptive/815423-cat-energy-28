@@ -15,16 +15,11 @@
           </picture>
         </a>
         <a class="page-header__logo-title" href="index.html">
-          <svg
-            class="logo-title__img"
-            xmlns="http://www.w3.org/2000/svg"
-            width="101"
-            height="18"
-            aria-label="Cat Energy"
-          >
-            <use xlink:href="img/cat-energy.svg"></use>
-          </svg>
+          <img class="logo-title__img" src="img/logo-catenergy.svg" alt="Логотип Cat Energy" />
         </a>
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Кнопка меню.</span>
+        </button>
         <nav class="main-nav">
           <ul class="main-nav__list">
             <li class="main-nav__item">
@@ -38,9 +33,6 @@
             </li>
           </ul>
         </nav>
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Кнопка меню.</span>
-        </button>
       </div>
     </header>
     <main class="main">
@@ -188,29 +180,39 @@
             src="https://yandex.ru/map-widget/v1/?um=constructor%3A9a265b612aab75cbc46091672844d2599608a380ddd9cbb41155a1875502a889&amp;source=constructor"
             width="500"
             height="400"
-          ></iframe>
+          >
+          </iframe>
         </div>
       </section>
-      <footer class="page-footer">
-        <div class="container">
-          <a class="page-footer-logo" href="index.html"><p class="visually-hidden">Логотип Cat Energy.</p></a>
-          <ul class="page-footer__social social">
-            <li class="social__item" href="https://vk.com/htmlacademy">
-              <span class="visually-hidden">Вконтакте.</span>
-            </li>
-            <li class="social__item" href="https://www.youtube.com/user/htmlacademyru">
-              <span class="visually-hidden">Youtube.</span>
-            </li>
-            <li class="social__item" href="https://t.me/htmlacademy">
-              <span class="visually-hidden">Телеграмм.</span>
-            </li>
-          </ul>
-          <div class="page-footer__copyright">
-            <p class="copyright__title">HTML Academy</p>
-            <a class="copyright__logo" href="index.html"></a>
-          </div>
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <a class="page-header__logo-title" href="index.html">
+          <img class="logo-title__img" src="img/logo-catenergy.svg" alt="Логотип Cat Energy" />
+        </a>
+        <ul class="page-footer__social social">
+          <li class="social__item">
+            <a class="social__item-link" href="https://vk.com/htmlacademy" aria-label="ВКонтакте" target="_blank"> </a>
+          </li>
+          <li class="social__item">
+            <a
+              class="social__item-link"
+              href="https://www.youtube.com/user/htmlacademyru"
+              aria-label="youtube"
+              target="_blank"
+            >
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__item-link" href="https://t.me/htmlacademy" aria-label="Телеграмм" target="_blank"> </a>
+          </li>
+        </ul>
+        <div class="page-footer__copyright copyright">
+          <p class="copyright__title">HTML Academy</p>
+          <a class="copyright__logo" href="index.html"></a>
         </div>
-      </footer>
+      </div>
+    </footer>
     </main>
   </body>
 </html>
