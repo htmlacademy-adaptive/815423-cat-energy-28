@@ -47,7 +47,7 @@ const compileHtml = () => {
 };
 
 const buildHtml = () => {
-  return compileHtml().pipe(gulp.dest('source'));
+  return compileHtml().pipe(gulp.dest('build'));
 };
 
 // Styles
@@ -131,7 +131,7 @@ const makeStack = () => {
 
 const copy = () => {
   return gulp
-    .src(['source/fonts/**/*.{woff2,woff}', 'source/*.ico', 'source/*.webmanifest'], {
+    .src(['source/{fonts,js}/**/*.{woff2,woff,js}', 'source/*.{ico,webmanifest}'], {
       base: 'source',
     })
     .pipe(gulp.dest('build'));
