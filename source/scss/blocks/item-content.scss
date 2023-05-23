@@ -1,0 +1,120 @@
+.item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+}
+
+.item-content__lable {
+  flex-shrink: 0;
+  max-width: 94px;
+  font-family: var(--accent-font);
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 117px;
+  }
+}
+
+.item-content__input {
+  padding: 14px 20px 13px;
+  flex-grow: 1;
+  font-family: var(--accent-font);
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--c-dark-gray);
+  border: none;
+  box-shadow: inset 0 0 0 1px #e7e7e7;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--c-special-gray);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px var(--c-dark-gray);
+  }
+
+  &:disabled {
+    background-color: var(--c-light-gray);
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 11px 20px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.item-content__input:invalid:not(:placeholder-shown) {
+  box-shadow: inset 0 0 0 1px var(--c-error-red);
+
+  .item-content--email::before {
+    background-color: var(var(--c-error-red));
+  }
+
+  .item-content--phone::before {
+    background-color: var(var(--c-error-red));
+  }
+}
+
+.item-content--email {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 17px;
+    width: 18px;
+    height: 14px;
+    mask-image: url("../img/sprite.svg#email");
+    background-color: var(--c-black);
+    mask-repeat: no-repeat;
+
+    @media (min-width: $tablet-width) {
+      right: 20px;
+    }
+  }
+
+  input {
+    @media (min-width: $tablet-width) {
+      width: 244px;
+    }
+  }
+}
+
+.item-content--email:focus-within::before {
+  background-color: var(--c-basic-green);
+}
+
+.item-content--phone {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    mask-image: url("../img/sprite.svg#phone");
+    background-color: var(--c-black);
+    mask-size: 16px 16px;
+    mask-repeat: no-repeat;
+
+    @media (min-width: $tablet-width) {
+      right: 20px;
+    }
+  }
+}
+
+.item-content--phone:focus-within::before {
+  background-color: var(--c-basic-green);
+}

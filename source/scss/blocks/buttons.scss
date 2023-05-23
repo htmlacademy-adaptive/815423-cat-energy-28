@@ -1,0 +1,26 @@
+.button {
+  display: inline-block;
+
+  font-family: var(--accent-font);
+  font-weight: 400;
+
+  background-color: var(--c-basic-green);
+  color: var(--c-white-default);
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: var(--c-pressed-green);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}

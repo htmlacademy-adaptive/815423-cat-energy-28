@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/style.css">
+		<title>HTML Academy: Кэт энерджи</title>
+		<link rel="icon" href="favicon.ico">
+		<link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="img/favicons/apple.png">
+		<link rel="manifest" href="manifest.webmanifest">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" crossorigin="anonymous">
+		<link rel="preload" href="fonts/oswald/oswaldregular.woff2" as="font" crossorigin="anonymous">
+		<link rel="preload" href="fonts/oswald/oswaldmedium.woff2" as="font" crossorigin="anonymous">
+	</head>
+	<body class="page">
+		{% include 'blocks/page-header.twig' %}
+
+		{% block main %}{% endblock %}
+
+		{% include 'blocks/page-footer.twig' %}
+
+		{% include 'blocks/scripts.twig' %}
+	</body>
+</html>

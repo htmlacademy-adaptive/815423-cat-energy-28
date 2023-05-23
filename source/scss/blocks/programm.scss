@@ -1,0 +1,210 @@
+.programm {
+  padding: 20px 20px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 30px 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 82px 110px 71px;
+  }
+}
+
+.programm__wrapper {
+  margin: 0 auto;
+  max-width: 1220px;
+}
+
+.programm__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+}
+
+.programm__item {
+  padding: 33px 20px 22px;
+  background-color: var(--c-basic-gray);
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    padding: 78px 316px 57px 52px;
+    width: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 77px 61px 59px 52px;
+    width: 570px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--c-basic-green);
+    content: "";
+  }
+}
+
+.programm__item--slim {
+  background-image: url("../img/sprite.svg#cat-slim");
+  background-position: 23px 24px;
+  background-size: 50px 53px;
+  background-repeat: no-repeat;
+
+  @media (min-width: $tablet-width) {
+    background-position: top 82px right 61px;
+    background-size: 200px 211px;
+  }
+
+  @media (min-width: $tablet-width + 1px) {
+    background-position: top 50% right 62px;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-position: 52px 41px;
+    background-size: 100px 106px;
+  }
+}
+
+.programm__item--strong {
+  background-image: url("../img/sprite.svg#cat-strong");
+  background-position: 14px 21px;
+  background-repeat: no-repeat;
+  background-size: 67px 50px;
+  padding-top: 28px;
+
+  @media (min-width: $tablet-width) {
+    background-position: top 91px right 28px;
+    background-size: 268px 200px;
+    padding-top: 77px;
+  }
+
+  @media (min-width: $tablet-width + 1px) {
+    background-position: top 50% right 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-position: top 47px left 33px;
+    background-size: 134px 100px;
+  }
+}
+
+.programm__title {
+  margin: 0;
+  margin-bottom: 29px;
+  margin-left: 71px;
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+  color: var(--c-black);
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 24px;
+    margin-left: 0;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 73px;
+    margin-left: 162px;
+  }
+}
+
+.programm__link {
+  position: relative;
+  padding: 0;
+  font-family: var(--accent-font);
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--c-black);
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 24px;
+    height: 12px;
+    margin-left: 15px;
+    mask-image: url("../img/sprite.svg#arrow");
+    background-color: var(--c-black);
+    content: "";
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+    padding-right: 39px;
+
+    &::after {
+      margin-left: 25px;
+    }
+  }
+}
+
+.programm__link:hover {
+  &::after {
+    mask-image: url("../img/sprite.svg#arrow-big");
+    width: 32px;
+    transition: mask-image 0.1s;
+  }
+}
+
+.programm__link:active {
+  opacity: 0.3;
+
+  &::after {
+    opacity: 0.3;
+  }
+}
+
+.programm__description {
+  margin: 0;
+  margin-bottom: 42px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -23px;
+    width: 100%;
+    height: 1px;
+    background-color: #d9d9d9;
+    content: "";
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 52px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--c-black);
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 27px;
+  }
+}
