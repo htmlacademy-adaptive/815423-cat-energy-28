@@ -46,12 +46,26 @@
 .site-list__item {
   border-bottom: 0 solid var(--c-basic-green);
 
-  a[href]:hover {
-    opacity: 0.8;
-  }
+  a[href] {
+    @media (max-width: $mobile-width-only) {
+      &:hover {
+        color: rgba(0, 0, 0, 0.8);
+      }
 
-  a[href]:active {
-    opacity: 0.6;
+      &:active {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    @media (min-width: $tablet-width) {
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    }
   }
 }
 

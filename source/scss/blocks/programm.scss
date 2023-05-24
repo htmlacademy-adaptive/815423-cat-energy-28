@@ -1,5 +1,5 @@
 .programm {
-  padding: 20px 20px 15px;
+  padding: 20px 20px 22px;
 
   @media (min-width: $tablet-width) {
     padding: 0 30px 45px;
@@ -35,7 +35,7 @@
 }
 
 .programm__item {
-  padding: 33px 20px 22px;
+  padding: 30px 20px 20px;
   background-color: var(--c-basic-gray);
   position: relative;
 
@@ -48,21 +48,11 @@
     padding: 77px 61px 59px 52px;
     width: 570px;
   }
-
-  &::before {
-    position: absolute;
-    top: 24px;
-    left: 22px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--c-basic-green);
-    content: "";
-  }
 }
 
 .programm__item--slim {
   background-image: url("../img/sprite.svg#cat-slim");
-  background-position: 23px 24px;
+  background-position: 23px 21px;
   background-size: 50px 53px;
   background-repeat: no-repeat;
 

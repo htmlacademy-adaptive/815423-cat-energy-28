@@ -1,7 +1,7 @@
 // global
-@import "common/global";
-@import "common/fonts.scss";
 @import "common/variables.scss";
+@import "common/fonts.scss";
+@import "common/global";
 
 // components
 @import "blocks/contacts.scss";
@@ -26,4 +26,3 @@
 @import "blocks/main-nav.scss";
 @import "blocks/main-title.scss";
 @import "blocks/site-list.scss";
-//=require blocks/**/*.scss

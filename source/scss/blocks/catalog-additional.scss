@@ -202,9 +202,6 @@
   }
 
   @media (min-width: $desktop-width) {
-    display: grid;
-    place-content: start;
-    justify-content: end;
     min-width: 42px;
   }
 }
