@@ -1,0 +1,12 @@
+.main-title {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  color: var(--c-black);
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}

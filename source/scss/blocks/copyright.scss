@@ -1,0 +1,42 @@
+.copyright {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    width: 168px;
+  }
+}
+
+.copyright__text {
+  display: block;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--c-dark-gray);
+  transform: translateY(-4px);
+
+  @media (min-width: $tablet-width) {
+    transform: translateY(0);
+  }
+}
+
+.copyright__link:hover .copyright__text {
+  color: var(--c-basic-green);
+}
+
+.copyright__link:active .copyright__text {
+  opacity: 0.3;
+}
+
+.copyright__picture {
+  fill: #666666;
+
+  .copyright__link:hover & {
+    fill: var(--c-basic-green);
+  }
+
+  .copyright__link:active & {
+    opacity: 0.3;
+  }
+}

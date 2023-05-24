@@ -1,0 +1,9 @@
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  @media (min-width: $desktop-width) {
+    position: relative;
+  }
+}

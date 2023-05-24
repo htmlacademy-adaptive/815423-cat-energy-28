@@ -1,0 +1,21 @@
+// font and colors
+:root {
+  --c-dark-gray: #444444;
+  --c-black: #000000;
+  --c-secondary-black: #222222;
+  --c-basic-green: #68b738;
+  --c-light-gray: #eaeaea;
+  --c-basic-gray: #f2f2f2;
+  --c-special-gray: #cdcdcd;
+  --c-pressed-green: #5eaa2f;
+  --c-error-red: #ff8282;
+  --c-white-default: #ffffff;
+  --main-font: "Lato", "Arial", sans-serif;
+  --accent-font: "Oswald", "Arial", sans-serif;
+}
+
+// viewports
+$tablet-width: 768px;
+$desktop-width: 1440px;
+$mobile-width-only: 767px;
+$tablet-width-only: 1439px;

@@ -1,0 +1,128 @@
+.contacts {
+  background-color: var(--c-white-default);
+
+  &--inner {
+    background-color: var(--c-basic-gray);
+
+    @media (min-width: $desktop-width) {
+      background-color: var(--c-white-default);
+    }
+  }
+}
+
+.contacts__wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+.contacts__container {
+  padding: 26px 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+
+  @media (min-width: $tablet-width) {
+    padding: 56px 70px 62px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 56px 70px 62px 80px;
+    width: 565px;
+    position: absolute;
+    background-color: var(--c-white-default);
+    top: 95px;
+    left: 110px;
+    gap: 95px;
+    align-items: center;
+  }
+}
+
+.contacts__lead {
+  margin: 0;
+  font-family: var(--accent-font);
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: var(--c-black);
+  width: 139px;
+
+  @media (min-width: $tablet-width) {
+    width: 172px;
+    font-size: 20px;
+    line-height: 26px;
+    transform: translateY(5px);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 163px;
+  }
+}
+
+.contacts__address {
+  width: 139px;
+
+  @media (min-width: $tablet-width) {
+    width: 160px;
+    text-align: right;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 175px;
+    text-align: start;
+  }
+
+  p {
+    margin: 0;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 19px;
+    }
+  }
+}
+
+.contacts__address,
+.contacts__city {
+  margin: 0;
+  line-height: 20px;
+}
+
+.contacts__map {
+  height: 362px;
+
+  img {
+    width: 100%;
+    min-height: 362px;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 112px;
+    z-index: 1;
+
+    @media (min-width: $tablet-width) {
+      top: 198px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: 0;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 400px;
+  }
+}
+
+.contacts iframe {
+  border: none;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 362px;
+  z-index: 2;
+
+  @media (min-width: $tablet-width) {
+    height: 400px;
+  }
+}

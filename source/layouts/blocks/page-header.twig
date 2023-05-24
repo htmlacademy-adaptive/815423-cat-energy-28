@@ -1,0 +1,26 @@
+<header class="main-header">
+	<a class="main-header__logo" href="index.html">
+		<picture>
+			<source media="(min-width: 1440px)" srcset="img/logo-desktop.svg">
+			<source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+			<img class="main-header__logo-picture" src="img/logo-mobile.svg" width="33" height="38" alt="Логотип Кэт энерджи.">
+		</picture>
+		<img class="main-header__logo-text" src="img/logo-text-header.svg" width="101" height="18" alt="Кэт энерджи.">
+	</a>
+	<nav class="main-header__nav main-nav main-nav--closed main-nav--nojs">
+		<button class="main-nav__toggle" type="button">
+			<span class="visually-hidden">Открыть меню.</span>
+		</button>
+		<ul class="main-nav__list site-list {{ page == 'index' ? 'site-list--index' }}">
+			<li class="site-list__item {{ page == 'index' ? 'site-list__item--current' }}">
+				<a href="index.html">Главная</a>
+			</li>
+			<li class="site-list__item {{ page == 'catalog' ? 'site-list__item--current' }}">
+				<a href="catalog.html">Каталог продукции</a>
+			</li>
+			<li class="site-list__item {{ page == 'form' ? 'site-list__item--current' }}">
+				<a href="form.html">Подбор программы</a>
+			</li>
+		</ul>
+	</nav>
+</header>
