@@ -56,7 +56,7 @@ export const styles = () => {
   return gulp
     .src('source/scss/style.scss', { sourcemaps: devMode })
     .pipe(plumber())
-    .pipe(include())
+    // .pipe(include())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
@@ -160,8 +160,8 @@ const server = (done) => {
 const watcher = () => {
   gulp.watch(EDITORCONFIG_CHECKS, lintEditorconfig);
   gulp.watch('source/scss/**/*.scss', gulp.series(styles));
-  gulp.watch('source/*.html').on('change', browser.reload);
   gulp.watch('source/layouts/**/*.twig', buildHtml);
+  gulp.watch('build/*.html').on('change', browser.reload);
 };
 
 export const lint = gulp.parallel(compileHtml, lintEditorconfig, lintStyles);
