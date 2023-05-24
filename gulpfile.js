@@ -90,9 +90,9 @@ const lintEditorconfig = () => {
 
 // Images
 
-const images = () =>
-  gulp
-    .src('source/img/**/*.{jpg,png,svg}')
+const images = () => {
+  return gulp
+    .src(['source/img/**/*.{jpg,png,svg}', '!source/img/icons/*.svg'])
     .pipe(
       imagemin([
         svgo(svgoConfig),
@@ -106,16 +106,17 @@ const images = () =>
         mozJpeg({ quality: 75, progressive: true }),
       ])
     )
+    .pipe(gulp.dest('build/img'));
+};
+
+const createWebp = () => {
+  return gulp
+    .src(['source/img/**/*.{jpg,png}', '!source/img/favicons/*'])
     .pipe(webp({ quality: 75 }))
     .pipe(gulp.dest('build/img'));
+};
 
 // Sprite
-
-const svg = () =>
-  gulp
-    .src(['source/img/*.svg', '!source/img/icons/*.svg'])
-    .pipe(imagemin([svgo(svgoConfig)]))
-    .pipe(gulp.dest('build/img'));
 
 const makeStack = () => {
   return gulp
@@ -143,7 +144,7 @@ const clean = () => deleteAsync('build');
 
 const server = (done) => {
   browser.init({
-    server: ['build', 'sourse'],
+    server: ['build', 'source'],
     cors: true,
     notify: false,
     ui: false,
@@ -162,15 +163,18 @@ const watcher = () => {
   gulp.watch(EDITORCONFIG_CHECKS, lintEditorconfig);
   gulp.watch('source/scss/**/*.scss', styles);
   gulp.watch('source/layouts/**/*.twig', gulp.series(buildHtml, reload));
+  gulp.watch(['source/img/**/*.{jpg,png}', '!source/img/favicons/*'], gulp.series(createWebp, reload));
+  gulp.watch('source/img/icons/*.svg', gulp.series(makeStack, reload));
 };
 
 export const lint = gulp.parallel(compileHtml, lintEditorconfig, lintStyles);
 
+
 export const compile = gulp.series(
   clean,
-  gulp.parallel(buildHtml, styles, lintEditorconfig, lintStyles, makeStack, svg, copy, images)
+  gulp.parallel(buildHtml, styles, lintEditorconfig, lintStyles, makeStack, createWebp)
 );
 
-export const build = gulp.series(compile, copy);
+export const build = gulp.series(compile, images, copy);
 
-export default gulp.series(compile, server, watcher, svg, copy, makeStack, images);
+export default gulp.series(compile, server, watcher);
