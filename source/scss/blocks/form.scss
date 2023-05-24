@@ -324,7 +324,7 @@
   }
 
   .form__item {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
     @media (min-width: $tablet-width) {
       margin-bottom: 0;
@@ -333,7 +333,7 @@
 }
 
 .form__button {
-  margin-bottom: 21px;
+  margin-bottom: 22px;
   padding: 10px 10px;
   width: 280px;
   font-size: 16px;
@@ -353,7 +353,7 @@
 
 .form__button-wrapper {
   margin: 0 auto;
-  padding: 6px 20px 32px;
+  padding: 17px 20px 32px;
   max-width: 1220px;
 
   @media (min-width: $tablet-width) {
