@@ -11,7 +11,6 @@ import lintspaces from 'gulp-lintspaces';
 import stylint from 'stylelint';
 import postcssReporter from 'postcss-reporter';
 import scssSyntax from 'postcss-scss';
-import include from 'gulp-include';
 import mozJpeg from 'imagemin-mozjpeg';
 import pngQuant from 'imagemin-pngquant';
 import svgo from 'imagemin-svgo';
@@ -56,7 +55,6 @@ export const styles = () => {
   return gulp
     .src('source/scss/style.scss', { sourcemaps: devMode })
     .pipe(plumber())
-    // .pipe(include())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
@@ -145,9 +143,7 @@ const clean = () => deleteAsync('build');
 
 const server = (done) => {
   browser.init({
-    server: {
-      baseDir: 'build',
-    },
+    server: ['build', 'sourse'],
     cors: true,
     notify: false,
     ui: false,
@@ -157,18 +153,24 @@ const server = (done) => {
 
 // Watcher
 
+const reload = (done) => {
+  browser.reload();
+  done();
+};
+
 const watcher = () => {
   gulp.watch(EDITORCONFIG_CHECKS, lintEditorconfig);
-  gulp.watch('source/scss/**/*.scss', gulp.series(styles));
-  gulp.watch('source/layouts/**/*.twig', buildHtml);
-  gulp.watch('build/*.html').on('change', browser.reload);
+  gulp.watch('source/scss/**/*.scss', styles);
+  gulp.watch('source/layouts/**/*.twig', gulp.series(buildHtml, reload));
 };
 
 export const lint = gulp.parallel(compileHtml, lintEditorconfig, lintStyles);
 
-export const build = gulp.series(
+export const compile = gulp.series(
   clean,
   gulp.parallel(buildHtml, styles, lintEditorconfig, lintStyles, makeStack, svg, copy, images)
 );
 
-export default gulp.series(build, server, watcher, svg, copy, makeStack, images);
+export const build = gulp.series(compile, copy);
+
+export default gulp.series(compile, server, watcher, svg, copy, makeStack, images);

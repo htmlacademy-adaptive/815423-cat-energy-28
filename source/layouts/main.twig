@@ -15,9 +15,11 @@
 	</head>
 	<body class="page">
 		{% include 'blocks/page-header.twig' %}
+		<main>
+			{% block main %}{% endblock %}
 
-		{% block main %}{% endblock %}
-
+			{% include 'blocks/contacts.twig' %}
+		</main>
 		{% include 'blocks/page-footer.twig' %}
 
 		{% include 'blocks/scripts.twig' %}
