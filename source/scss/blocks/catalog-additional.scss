@@ -285,7 +285,7 @@
     background-color: rgba(104, 183, 56, 0.85);
     background-image: url("../img/sprite.svg#icon-gift");
     background-repeat: no-repeat;
-    background-position: 101px 59px;
+    background-position: 50% 27%;
     background-size: 78px 80px;
     content: "";
 
@@ -311,12 +311,13 @@
 }
 
 .catalog-extra__text {
-  margin: 0;
+  margin: 0 auto;
   width: 161px;
   text-align: center;
 
   @media (min-width: $tablet-width) {
     text-align: left;
+    margin: 0;
   }
 
   @media (min-width: $desktop-width) {

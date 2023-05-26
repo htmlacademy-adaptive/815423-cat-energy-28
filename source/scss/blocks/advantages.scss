@@ -33,8 +33,6 @@
   padding-left: 80px;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: repeat(4, 54px);
   gap: 26px;
 
   @media (min-width: $tablet-width) {
@@ -55,6 +53,9 @@
 
 .advantages__item {
   position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 54px;
 
   @media (min-width: $tablet-width) {
     min-width: 204px;
