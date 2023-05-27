@@ -1,4 +1,5 @@
 .item-content {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +22,7 @@
 }
 
 .item-content__input {
-  padding: 13px 20px 14px;
+  padding: 12px 20px 9px;
   font-family: var(--accent-font);
   font-size: 16px;
   line-height: 18px;
@@ -54,63 +55,40 @@
   }
 }
 
-.item-content__input:invalid:not(:placeholder-shown) {
-  box-shadow: inset 0 0 0 1px var(--c-error-red);
+.item-content__icon {
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  transform: translateY(-50%);
+  background-color: var(--c-black);
+  mask-repeat: no-repeat;
 
-  .item-content--email::before {
-    background-color: var(var(--c-error-red));
+  @media (min-width: $tablet-width) {
+    right: 20px;
   }
 
-  .item-content--phone::before {
-    background-color: var(var(--c-error-red));
-  }
-}
-
-.item-content--email {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  &--email {
     width: 18px;
     height: 14px;
     mask-image: url("../img/sprite.svg#email");
-    background-color: var(--c-black);
-    mask-repeat: no-repeat;
-
-    @media (min-width: $tablet-width) {
-      right: 20px;
-    }
+    mask-size: 16px 16px;
   }
-}
 
-.item-content--email:focus-within::before {
-  background-color: var(--c-basic-green);
-}
-
-.item-content--phone {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  &--phone {
     width: 16px;
     height: 16px;
     mask-image: url("../img/sprite.svg#phone");
-    background-color: var(--c-black);
-    mask-size: 16px 16px;
-    mask-repeat: no-repeat;
-
-    @media (min-width: $tablet-width) {
-      right: 20px;
-    }
   }
 }
 
-.item-content--phone:focus-within::before {
+.item-content__input:focus + .item-content__icon {
   background-color: var(--c-basic-green);
+}
+
+.item-content__input:invalid:not(:placeholder-shown) {
+  box-shadow: inset 0 0 0 1px var(--c-error-red);
+
+  + .item-content__icon {
+    background-color: var(--c-error-red);
+  }
 }
